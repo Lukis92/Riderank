@@ -9,5 +9,5 @@
 #
 
 class Provider < ActiveRecord::Base
-  validate :name, presence: true
+  validates :name, presence: true
 end
