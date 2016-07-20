@@ -1,0 +1,16 @@
+= simple_form_for @ride, html:{ class: 'form-horizontal'} do |f|
+  .row
+    .col-md-5
+      = f.simple_fields_for :start_address do |sa|
+        = sa.input :street
+        = sa.input :city
+        = sa.input :country, prompt: "Select country"
+    .col-md-5.col-md-offset-2
+      = f.simple_fields_for :destination_address do |da|
+        = da.input :street
+        = da.input :city
+        = da.input :country, prompt: "Select country"
+  = f.input :price
+  = f.input :provider_id, collection: @providers.map{|p| [p.name, p.id]},
+                          prompt: "Select provider"
+  = f.button :submit, class: "btn btn-primary btn-block"

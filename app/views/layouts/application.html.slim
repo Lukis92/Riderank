@@ -2,10 +2,14 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title Riderank
+    title= content_for?(:title) ? yield(:title) : ENV['APP_NAME']
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = render 'layouts/messages'
-    = yield
+    header
+      = render 'layouts/navigation'
+    main role="main"
+      .container
+        = render 'shared/messages'
+        = yield
