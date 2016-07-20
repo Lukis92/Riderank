@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Seeds: start"
 Provider.create(name: "Uber")
 Provider.create(name: "Sawa")
 Provider.create(name: "MPT")
+puts "Seeds: done"

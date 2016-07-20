@@ -1,4 +1,4 @@
-= simple_form_for @ride, html:{ class: 'form-horizontal'} do |f|
+= simple_form_for ride, html:{ class: 'form-horizontal'} do |f|
   .row
     .col-md-5
       = f.simple_fields_for :start_address do |sa|
@@ -11,6 +11,7 @@
         = da.input :city
         = da.input :country, prompt: "Select country"
   = f.input :price
-  = f.input :provider_id, collection: @providers.map{|p| [p.name, p.id]},
+  = f.input :provider_id, collection: provider_collection,
                           prompt: "Select provider"
-  = f.button :submit, class: "btn btn-primary btn-block"
+  = link_to t('shared.back'), rides_path, class: 'btn btn-default'
+  = f.button :submit, class: 'btn btn-primary'

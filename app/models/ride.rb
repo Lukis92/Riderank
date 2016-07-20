@@ -22,4 +22,6 @@ class Ride < ActiveRecord::Base
   has_one :start_address, class_name: "Address"
   has_one :destination_address, class_name: "Address"
   # ************************#
+
+  accepts_nested_attributes_for :start_address, :destination_address
 end

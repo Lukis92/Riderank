@@ -1,0 +1,28 @@
+= link_to t('shared.add_new_item'), new_ride_path, class: 'btn btn-primary'
+table.table.table-inverse
+  thead
+    tr
+      th= t('ride.columns.day')
+      th= t('ride.columns.rides_sum')
+      th= t('ride.columns.avg_ride')
+      th= t('ride.columns.avg_price')
+      th= t('ride.columns.taxis')
+  tbody
+    - if @rides.present?
+      - @rides.each do |ride|
+        tr
+          td
+            = day
+          td
+            | ss
+          td
+            | ss
+          td
+            | ss
+          td
+            | ss
+    - else
+      tr
+        td.well colspan="5"
+          .text-center
+            | Empty

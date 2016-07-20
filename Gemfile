@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # OWN GEMS#
 gem 'annotate', '~> 2.7', '>= 2.7.1' # Annotate ActiveRecord models as a gem.
+gem 'decent_exposure', '3.0.0' # Declarative interfaces in controllers
 gem 'devise' # Easy authorization library.
 gem 'simple_form' # REALLY Simple Form builder.
 gem 'slim-rails' # SLIM templating
