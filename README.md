@@ -1,25 +1,43 @@
-# README
+# Riderank app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simply app to register own rides between any addresses. Based on your rides app
+create week and month statistics about sum of rides, average prices and ride
+distances.
 
-Things you may want to cover:
+## Getting started
+To get started with the app, clone the repo and then install the needed gems:
 
-* Ruby version
+```
+$ bundle install --without production
+```
+Next, copy database.yml.sample schema to database.yml(if you don't have, just create)
+and configure with own PostgreSQL database.
 
-* System dependencies
+Next, create the database:
 
-* Configuration
+```
+$ rails db:create
+```
 
-* Database creation
+Next, migrate the database:
 
-* Database initialization
+```
+$ rails db:migrate
+```
 
-* How to run the test suite
+Next, seed default data:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:seed
+```
 
-* Deployment instructions
+Finally, you can run rails server and see result
 
-* ...
-# Riderank
+```
+$ rails s
+```
+
+## Information about environment
+[ruby] - version 2.3.0
+[rails] - version 5.0.0
+[PostgreSQL] - version 0.18.4

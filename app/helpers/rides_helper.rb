@@ -30,17 +30,6 @@ module RidesHelper
     rides.map{|ride| ride.provider.name}.uniq.join(', ')
   end
 
-  # all rides in current week
-  def current_week
-    rides = current_user.rides.where("created_at > ?", Date.today.at_beginning_of_week)
-  end
-
-  # all rides in current month
-  def current_month
-    rides = current_user.rides.where("created_at > ?", Date.today.at_beginning_of_month)
-  end
-
-
   # e.g. 12.45 km instead 12.45
   def km(dist)
     "#{dist}km"

@@ -19,7 +19,7 @@ class RidesController < ApplicationController
     ride.user = current_user
     ride.assign_attributes(ride_params)
     if ride.save
-      redirect_to root_path, notice: I18n.t('shared.created', resource: 'Ride')
+      redirect_to rides_path, notice: I18n.t('shared.created', resource: 'Ride')
     else
       render :new
     end

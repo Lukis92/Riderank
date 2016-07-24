@@ -22,13 +22,14 @@ Provider.create!(name: "Uber")
 Provider.create!(name: "Sawa")
 Provider.create!(name: "MPT")
 
-3.times do
-  Ride.create!(
-    price: Faker::Commerce.price,
-    distance: Faker::Number.decimal(2, 3),
-    user_id: 1,
-    provider_id: Faker::Number.between(1, 3)
-  )
-end
-p "Created #{Ride.count} rides"
+# It's not work if we have before_validation :set_distance in model ride
+# 3.times do
+#   Ride.create!(
+#     price: Faker::Commerce.price,
+#     distance: Faker::Number.decimal(2, 3),
+#     user_id: 1,
+#     provider_id: Faker::Number.between(1, 3)
+#   )
+# end
+#p "Created #{Ride.count} rides"
 p "Seeds: done"
