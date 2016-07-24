@@ -5,8 +5,10 @@ en:
     register: Register
     rides: Rides
   shared:
+    created: "%{resource} has been created!"
     back: Back
     add_new_item: Add new one
+    km: "%{resource} km"
   ride:
     columns:
       day: Day
@@ -14,3 +16,6 @@ en:
       avg_ride: Avg. ride
       avg_price: Avg.price
       taxis: Taxis
+  time:
+    formats:
+      default: "%d %B %Y"

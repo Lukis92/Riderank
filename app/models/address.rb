@@ -8,8 +8,9 @@
 #  country    :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  ride_id    :integer
 #
 
 class Address < ActiveRecord::Base
-  belongs_to :ride
+  belongs_to :ride, optional: true
 end

@@ -1,4 +1,5 @@
 = link_to t('shared.add_new_item'), new_ride_path, class: 'btn btn-primary'
+h4 Current week
 table.table.table-inverse
   thead
     tr
@@ -8,19 +9,49 @@ table.table.table-inverse
       th= t('ride.columns.avg_price')
       th= t('ride.columns.taxis')
   tbody
-    - if @rides.present?
-      - @rides.each do |ride|
+    - unless @week_rides.blank?
+      - @week_rides.each do |created_at, rides|
         tr
           td
-            = day
+            = created_at
           td
-            | ss
+            = sum_rides(rides)
           td
-            | ss
+            = avg_rides(rides)
           td
-            | ss
+            = avg_price(rides)
           td
-            | ss
+            = display_providers
+    - else
+      tr
+        td.well colspan="5"
+          .text-center
+            | Empty
+
+hr
+h4 Current Month
+table.table.table-inverse
+  thead
+    tr
+      th= t('ride.columns.day')
+      th= t('ride.columns.rides_sum')
+      th= t('ride.columns.avg_ride')
+      th= t('ride.columns.avg_price')
+      th= t('ride.columns.taxis')
+  tbody
+    - unless @month_rides.blank?
+      - @month_rides.each do |created_at, rides|
+        tr
+          td
+            = created_at
+          td
+            = sum_rides(rides)
+          td
+            = avg_rides(rides)
+          td
+            = avg_price(rides)
+          td
+            = display_providers
     - else
       tr
         td.well colspan="5"
